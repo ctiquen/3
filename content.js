@@ -2,7 +2,6 @@ const rounds = [
   {
     "id": 1,
     "title": "¿Basta con tener ingresos?",
-    "speaker": "Integrante 1",
     "time": "3 minutos",
     "scenario": "Una familia recibe ingresos que la ubican por encima de la línea monetaria de pobreza. Sin embargo, vive lejos de un hospital, no tiene agua potable continua y sus hijos deben caminar horas para llegar a la escuela.",
     "question": "¿Qué decisión reduciría mejor la pobreza de esta familia?",
