@@ -37,15 +37,15 @@ function renderStage(state) {
   $('slide-counter').textContent = `Diapositiva ${state.currentIndex + 1} / ${state.totalRounds}`;
   const options = round.options.map(o => `<div class="option-card"><span class="option-letter">${o.id}</span><div><strong>${o.label}</strong></div></div>`).join('');
   if (state.phase === 'question' || state.phase === 'voting') {
-    $('stage').innerHTML = `<div class="stage-kicker">RONDA ${round.id} · ${round.speaker.toUpperCase()}</div><div class="scenario-label">El caso</div><p class="scenario-text">${round.scenario}</p><h2 class="question-heading">${round.question}</h2><div class="option-grid">${options}</div><div class="stage-rule">${state.phase === 'voting' ? '<b>VOTACIÓN ABIERTA:</b> el público puede elegir o cambiar su respuesta desde el celular.' : 'Lee el escenario y las opciones. La votación todavía no está abierta.'}</div>${progressMarkup(state.currentIndex, state.totalRounds)}`;
-  } else if (state.phase === 'results') {
-    const counts = state.counts || {A:0,B:0,C:0};
-    const total = state.totalVotes || 0;
-    const resultCards = round.options.map(o => {
-      const count = counts[o.id] || 0; const pct = total ? Math.round(count / total * 100) : 0;
-      return `<div class="result-item"><div class="result-top"><strong><span class="option-letter" style="display:inline-grid;width:25px;height:25px;margin-right:7px;vertical-align:middle">${o.id}</span>${o.label}</strong><span class="result-count"><b class="result-percent">${pct}%</b> · ${count} votos</span></div><div class="bar-track"><div class="bar-fill" style="width:${pct}%"></div></div><div class="result-consequence">${o.consequence}</div></div>`;
-    }).join('');
-    $('stage').innerHTML = `<div class="stage-kicker">RONDA ${round.id} · RESULTADOS DEL GRUPO</div><h1 class="question-heading">${round.title}</h1><p>Así respondió la clase. Lean las tres consecuencias: no se trata solo de identificar una opción ganadora, sino de discutir qué dimensiones de la pobreza atiende cada decisión.</p><div class="result-grid">${resultCards}</div><div class="stage-rule"><b>${total} votos registrados.</b> Ahora pulsa “Mostrar explicación” para conectar las decisiones con Sen y las lecturas complementarias.</div>${progressMarkup(state.currentIndex, state.totalRounds)}`;
+    const isScreen = document.body.classList.contains('screen-body');
+    const kicker = isScreen
+      ? `RONDA ${round.id}`
+      : `RONDA ${round.id} · ${round.speaker.toUpperCase()}`;
+    const rule = state.phase === 'voting'
+      ? '<div class="stage-rule"><b>VOTACIÓN ABIERTA:</b> el público puede elegir o cambiar su respuesta desde el celular.</div>'
+      : (isScreen ? '' : '<div class="stage-rule">Lee el escenario y las opciones. La votación todavía no está abierta.</div>');
+
+    $('stage').innerHTML = `<div class="stage-kicker">${kicker}</div><div class="scenario-label">El caso</div><p class="scenario-text">${round.scenario}</p><h2 class="question-heading">${round.question}</h2><div class="option-grid">${options}</div>${rule}${progressMarkup(state.currentIndex, state.totalRounds)}`;
   } else if (state.phase === 'explanation') {
     $('stage').innerHTML = `<div class="stage-kicker">RONDA ${round.id} · CONCEPTO CLAVE</div><h1 class="question-heading">${round.insightTitle}</h1><div class="explanation-block"><p>${round.explanation}</p></div><div class="concept-label">Para explicar en clase</div><div class="teaching-box"><strong>Idea para desarrollar</strong><p>${round.teaching}</p></div><div class="teaching-box"><strong>Conexión con otra lectura</strong><p>${round.connection}</p></div><p class="takeaway">${round.takeaway}</p><div class="discussion-prompt"><b>Pregunta al grupo:</b> ${round.discussion}</div>${progressMarkup(state.currentIndex, state.totalRounds)}`;
   }
