@@ -1,8 +1,27 @@
+// ===== EDITA AQUÍ LA PORTADA (solo se ve en la proyección /screen) =====
+const PORTADA = {
+  universidad: 'Universidad Nacional de Colombia',
+  curso: 'Economía Política II',
+  integrantes: ['Ana Bernadette Villavicencio Pauccar', 'Andrea Mamani Gallegos ', 'Berenice Faryde Gonzales Mollo ', 'Diego Alejandro Garnica Mamanché ', 'Ferney Esteban Díaz Rojas ', 'Noe Nicolay Paccha Salas', 'Lyna Camila Tique Nova'],
+  autores: [
+    'Amartya Sen, <i>Desarrollo y libertad</i> (cap. 4)',
+    'Christian I. Becerril Velasco (2015)',
+    'Nancy Fraser (2008)',
+    'Ted Piccone, Brookings (2019)',
+    'Acuerdo Final de Paz (2016)'
+  ]
+};
+// ======================================================================
+
 function progressMarkup(index, total) {
   return `<div class="slide-progress">${Array.from({length:total || 8}, (_, i) => `<span class="${i <= index ? 'active' : ''}"></span>`).join('')}</div>`;
 }
 function renderStage(state) {
   const round = state.round;
+  if (state.phase === 'intro' && document.body.classList.contains('screen-body')) {
+    $('stage').innerHTML = `<div class="stage-kicker">${PORTADA.universidad.toUpperCase()}</div><div class="concept-label" style="margin-top:0">${PORTADA.curso}</div><h1>¿Pobreza o falta de libertad?</h1><h2>El desafío de construir una sociedad con capacidades</h2><p>Ocho situaciones. Tres decisiones posibles. Una pregunta de fondo: ¿qué significa realmente superar la pobreza?</p><div class="concept-label">Basada en</div><p class="tiny">${PORTADA.autores.join(' · ')}</p><div class="concept-label">Presentan</div><p><b>${PORTADA.integrantes.join(' · ')}</b></p>`;
+    return;
+  }
   if (state.phase === 'intro') {
     $('stage').innerHTML = `<div class="stage-kicker">DINÁMICA DE CLASE</div><h1>¿Pobreza o falta de libertad?</h1><h2>El desafío de construir una sociedad con capacidades</h2><p>Ocho situaciones. Tres decisiones posibles. Una pregunta de fondo: ¿qué significa realmente superar la pobreza?</p><div class="stage-rule">Cuando el equipo esté listo, pulsa <b>Iniciar presentación</b>. Después abre cada votación.</div><div class="concept-label">Ruta de la clase</div><p class="tiny">Ingresos y capacidades → factores de conversión → salud y educación → desempleo → mortalidad → género y justicia → programas focalizados o universales → territorio y paz.</p>`;
     $('speaker-label').textContent = 'Equipo expositor'; $('slide-counter').textContent = 'Inicio';
