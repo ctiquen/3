@@ -78,7 +78,7 @@ $('restart-btn').addEventListener('click', () => {
 
 function render(state) {
   $('phase-label').textContent = phaseNames[state.phase] || 'ACTIVIDAD';
- //$('round-label').textContent = state.round ? `Ronda ${state.currentIndex + 1} de ${state.totalRounds}` : 'Cierre';
+  $('round-label').textContent = state.round ? `Ronda ${state.currentIndex + 1} de ${state.totalRounds}` : 'Cierre';
   $('online-count').textContent = state.onlineParticipants ?? 0;
   $('vote-total').textContent = state.totalVotes ?? 0;
   $('room-label').textContent = state.roomCode;
