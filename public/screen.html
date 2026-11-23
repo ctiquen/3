@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proyección · Aula de Capacidades</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body class="screen-body">
+  <main class="screen-main"><article id="stage" class="stage-card screen-stage"></article></main>
+  <aside class="qr-dock" id="qr-dock">
+    <img id="dock-qr" alt="QR para votar">
+    <div class="dock-info">
+      <div class="tiny">Escanea para votar</div>
+      <b id="dock-link" class="dock-link"></b>
+      <div class="js-countdown timer-chip timer-big"></div>
+      <div><b id="dock-count">0</b> votos</div>
+      <div id="dock-bars" class="live-bars"></div>
+    </div>
+  </aside>
+  <span id="speaker-label" hidden></span><span id="slide-counter" hidden></span>
+  <script src="/stage.js"></script>
+  <script src="/screen.js"></script>
+</body>
+</html>
