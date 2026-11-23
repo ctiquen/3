@@ -33,7 +33,7 @@ function renderStage(state) {
     return;
   }
   if (!round) return;
-  $('speaker-label').textContent = `${round.speaker} · ${round.time}`;
+  //$('speaker-label').textContent = `${round.speaker} · ${round.time}`;
   $('slide-counter').textContent = `Diapositiva ${state.currentIndex + 1} / ${state.totalRounds}`;
   const options = round.options.map(o => `<div class="option-card"><span class="option-letter">${o.id}</span><div><strong>${o.label}</strong></div></div>`).join('');
   if (state.phase === 'question' || state.phase === 'voting') {
