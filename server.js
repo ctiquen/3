@@ -64,6 +64,7 @@ const state = {
   phase: 'intro', // intro | question | voting | results | explanation | finished
   currentIndex: 0,
   votes: {}, // participantId -> optionId (one current vote per device)
+  history: {},
   voteEndsAt: null,
   onlineParticipants: new Set()
 };
@@ -99,6 +100,7 @@ function publicState(includeLiveCounts) {
     round: currentRound(),
     counts: includeLiveCounts || ['results', 'explanation', 'finished'].includes(state.phase) ? countsForCurrentRound() : null,
     totalVotes: Object.keys(state.votes).length,
+    history: state.history,
     endsAt: state.phase === 'voting' ? state.voteEndsAt : null,
     now: Date.now(),
     onlineParticipants: state.onlineParticipants.size
@@ -197,6 +199,7 @@ io.on('connection', (socket) => {
     broadcastState();
   }));
   socket.on('control:next', () => presenterOnly(socket, () => {
+    state.history[state.currentIndex] = countsForCurrentRound();
     if (state.phase !== 'explanation') return;
     clearVoteTimer();
     if (state.currentIndex >= rounds.length - 1) {
@@ -212,6 +215,7 @@ io.on('connection', (socket) => {
     clearVoteTimer();
     state.phase = 'intro';
     state.currentIndex = 0;
+    state.history = {};
     state.votes = {};
     broadcastState();
   }));
