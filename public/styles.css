@@ -67,3 +67,33 @@
 .explanation-stage .discussion-prompt {
   font-size: calc(14px + 2pt) !important;
 }
+
+/* ---- Jerarquía de cuadros en la portada (.screen-body) ---- */
+.screen-body .portada-lead {
+  background: var(--pale);
+  border-left: 4px solid var(--coral);
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin: 18px 0 20px;
+  max-width: 850px;
+}
+
+.screen-body .portada-lead p {
+  margin: 0;
+  color: var(--ink);
+}
+
+.screen-body .portada-box {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 14px 18px;
+  margin-top: 8px;
+  max-width: 850px;
+}
+
+.screen-body .portada-box p {
+  margin: 0;
+  color: var(--muted);
+}
+
