@@ -25,7 +25,7 @@ const rounds = [
     ],
     "insightTitle": "La pobreza no es solamente falta de ingresos",
     "explanation": "Para Amartya Sen, el ingreso es un medio importante, pero no es el fin del desarrollo. Lo central es si las personas cuentan con capacidades reales para alcanzar funcionamientos que valoran: estar bien alimentadas, recibir atención médica, aprender, desplazarse y participar en la sociedad. Dos hogares con el mismo ingreso pueden tener libertades muy distintas.",
-    "teaching": "Aclaren la diferencia entre recursos, capacidades y funcionamientos. El ingreso es un recurso; poder llegar a una consulta médica es una oportunidad real; recibir atención y mejorar la salud es un funcionamiento. La línea de pobreza monetaria no muestra por sí sola todas las privaciones.",
+    "teaching": "El ingreso es un recurso; poder llegar a una consulta médica es una oportunidad real; recibir atención y mejorar la salud es un funcionamiento. La línea de pobreza monetaria no muestra por sí sola todas las privaciones.",
     "connection": "La lectura de Becerril Velasco complementa este punto: el papel del Estado y la capacidad institucional importan porque los recursos y las políticas necesitan instituciones que los conviertan en mejoras efectivas.",
     "takeaway": "La pregunta clave no es solo cuánto dinero tiene una persona, sino qué puede hacer y ser realmente con los recursos disponibles.",
     "discussion": "¿Puede una persona dejar de ser pobre en términos monetarios y seguir privada de libertades importantes?"
@@ -56,7 +56,7 @@ const rounds = [
     ],
     "insightTitle": "Los recursos se convierten en libertades de manera desigual",
     "explanation": "Sen destaca factores de conversión distintos: heterogeneidad personal (edad, salud o discapacidad), diversidad del ambiente físico y social, y perspectivas relacionales. La misma cantidad de dinero no produce la misma capacidad en todas las personas. También importa cómo se distribuyen los recursos dentro del hogar: recibir una ayuda para la familia no significa que todos sus integrantes puedan decidir sobre ella o beneficiarse por igual.",
-    "teaching": "Pueden mencionar la idea de Adam Smith retomada por Sen: tener recursos para “aparecer en público sin vergüenza”. La posibilidad de participar depende de normas sociales y costos que varían entre sociedades y personas.",
+    "teaching": "Iidea de Adam Smith retomada por Sen: tener recursos para “aparecer en público sin vergüenza”. La posibilidad de participar depende de normas sociales y costos que varían entre sociedades y personas.",
     "connection": "Este ejemplo ayuda a explicar por qué una política uniforme puede reproducir desigualdades. La lectura de Fraser permite añadir que la justicia también exige reconocimiento y participación, no solo repartir recursos.",
     "takeaway": "La equidad requiere mirar las condiciones que permiten —o impiden— transformar recursos en oportunidades reales.",
     "discussion": "¿Tratar a todos exactamente igual siempre produce un resultado justo?"
@@ -87,7 +87,7 @@ const rounds = [
     ],
     "insightTitle": "Ingreso y capacidades se fortalecen mutuamente",
     "explanation": "La relación entre ingreso y capacidades es bidireccional. Un mayor ingreso puede facilitar alimentación, vivienda y acceso a servicios; a su vez, la salud y la educación amplían las posibilidades de trabajar, participar y generar ingresos. Sen utiliza experiencias como Kerala para mostrar que avances importantes en salud y educación pueden lograrse incluso sin niveles extraordinarios de ingreso o crecimiento económico.",
-    "teaching": "No presenten el caso de Kerala como una receta automática ni como prueba de que el ingreso no importa. La idea es que la inversión social y la acción pública pueden mejorar capacidades y que esas capacidades también contribuyen al desarrollo económico.",
+    "teaching": "El caso de Kerala no es una receta automática ni prueba que el ingreso no importa. La idea es que la inversión social y la acción pública pueden mejorar capacidades y que esas capacidades también contribuyen al desarrollo económico.",
     "connection": "Becerril Velasco ayuda a discutir la capacidad del Estado para sostener políticas sociales y evitar que el retiro de la intervención pública debilite la atención de la pobreza.",
     "takeaway": "No es una elección simple entre dinero y servicios: una estrategia consistente considera cómo se complementan.",
     "discussion": "¿Qué debería atenderse primero cuando las necesidades inmediatas y las inversiones de largo plazo compiten por el presupuesto?"
@@ -118,7 +118,7 @@ const rounds = [
     ],
     "insightTitle": "El desempleo produce privaciones más allá del ingreso",
     "explanation": "En el análisis de Sen, el desempleo puede afectar la autoestima, las relaciones sociales, las habilidades, la salud mental y la posibilidad de participar en la vida comunitaria. Por eso, medir únicamente la pérdida monetaria no alcanza para comprender sus efectos. La protección de ingresos importa, pero también las oportunidades reales de empleo y participación.",
-    "teaching": "Eviten afirmar que todas las personas desempleadas viven exactamente los mismos efectos. La tesis es que existen consecuencias no monetarias relevantes que deben entrar en el análisis de la pobreza y la política pública.",
+    "teaching": "La tesis es que existen consecuencias no monetarias relevantes que deben entrar en el análisis de la pobreza y la política pública.",
     "connection": "La discusión sobre intervención estatal de Becerril Velasco permite preguntar qué instituciones, políticas laborales y servicios pueden evitar que una crisis de empleo se convierta en exclusión prolongada.",
     "takeaway": "Una política contra la pobreza debe mirar también la autonomía, las relaciones, las habilidades y la participación.",
     "discussion": "¿Qué dimensiones del bienestar quedan invisibles cuando solo medimos el ingreso mensual?"
@@ -148,7 +148,7 @@ const rounds = [
     ],
     "insightTitle": "La privación de capacidades afecta hasta la probabilidad de sobrevivir",
     "explanation": "Sen compara la supervivencia de los hombres afroamericanos en Estados Unidos con la de personas de China o Kerala, con rentas mucho menores, y muestra que la renta media no basta: pesan el acceso a la atención médica, la discriminación y la violencia. Compara además a la India y África Subsahariana: en África hay mayor mortalidad prematura por conflictos y fallas en la salud, mientras que en la India la desnutrición infantil es más alta (entre 40% y 60% de los niños, frente a 20%–40%) pese a ser autosuficiente en alimentos.",
-    "teaching": "Subrayen que la comparación se hace con las capacidades (vivir una vida larga y sana), no con el ingreso. Aclaren que son cifras de la discusión de Sen y que no se presentan como estadísticas actuales.",
+    "teaching": "La comparación se hace con las capacidades (vivir una vida larga y sana) y no con el ingreso. Son cifras de la discusión de Sen y no se presentan como estadísticas actuales.",
     "connection": "Becerril Velasco, citando a Ranis y Stewart, destaca que un gasto social eficaz es clave para reducir la pobreza en países de ingreso bajo o medio: la capacidad del Estado para financiar y entregar servicios es parte de la respuesta.",
     "takeaway": "Dos poblaciones con ingresos muy distintos pueden tener libertades de vivir igual de recortadas: lo que importa es qué logran ser y hacer las personas.",
     "discussion": "¿Qué indicador usarían, además del ingreso, para saber si una comunidad realmente está mejorando?",
@@ -180,7 +180,7 @@ const rounds = [
     ],
     "insightTitle": "La justicia exige recursos, reconocimiento y voz",
     "explanation": "Sen analiza la desigualdad dentro del hogar y la discriminación de género, incluida la idea de las “mujeres desaparecidas”: muertes y desventajas asociadas a la desigualdad en nutrición, salud y trato. Fraser complementa este enfoque: la justicia no se agota en la distribución económica; también requiere reconocimiento y paridad de participación. En su lectura, el género tiene dimensiones económicas y de estatus, por lo que necesita respuestas en ambos planos.",
-    "teaching": "Expliquen que una transferencia dirigida a una mujer no basta por sí sola si no puede controlar los recursos o participar en las decisiones. La cifra de más de 100 millones aparece en la discusión histórica de Sen; no debe presentarse como un conteo actual.",
+    "teaching": "Una transferencia dirigida a una mujer no basta por sí sola si no puede controlar los recursos o participar en las decisiones.",
     "connection": "Aquí se cruzan Sen y Fraser: las capacidades dependen de recursos y condiciones materiales, pero también de relaciones de poder, reconocimiento social y posibilidad de intervenir en decisiones colectivas.",
     "takeaway": "No basta con preguntar cuánto se reparte: también hay que preguntar quién recibe, quién decide, quién es reconocido y quién puede participar.",
     "discussion": "¿Qué desigualdades pueden permanecer ocultas cuando analizamos únicamente el ingreso promedio de un hogar?"
@@ -210,7 +210,7 @@ const rounds = [
     ],
     "insightTitle": "Cómo se diseña la ayuda también decide qué libertades se amplían",
     "explanation": "Sen advierte que los programas condicionados a comprobar ingresos generan distorsión informativa, desincentivos al trabajo, estigma, costos administrativos elevados y menor apoyo político. En cambio, la provisión pública dirigida a ampliar capacidades (servicios universales de salud y educación, empleo público) resulta más sólida, inclusiva y con menos incentivos perversos.",
-    "teaching": "No presenten lo universal como siempre superior: la discusión es qué diseño evita excluir y estigmatizar sin perder viabilidad fiscal. Pidan argumentos a favor y en contra de cada opción.",
+    "teaching": "La discusión es qué diseño evita excluir y estigmatizar sin perder viabilidad fiscal.",
     "connection": "Fraser nombra la «falta de respeto» y la estigmatización como injusticias de reconocimiento, no solo económicas. Becerril, con Esping-Andersen, contrasta regímenes liberales (ayudas condicionadas a demostrar necesidad) con el socialdemócrata (servicios universales con sistema fiscal progresivo) y explica por qué en América Latina la baja recaudación limita estas políticas.",
     "takeaway": "La política contra la pobreza no solo reparte recursos: puede reconocer o estigmatizar, incluir o excluir.",
     "discussion": "¿Se puede focalizar sin estigmatizar? ¿Qué le exige a un Estado ofrecer servicios universales?",
@@ -242,8 +242,7 @@ const rounds = [
     ],
     "insightTitle": "La paz también requiere capacidades y presencia estatal",
     "explanation": "La lectura sobre Colombia y justicia transicional presenta la exclusión rural, la concentración de la tierra y la débil presencia estatal como problemas que el Acuerdo Final busca enfrentar mediante desarrollo rural, restitución y acceso a tierras, reparación a víctimas, servicios de salud, crédito, ingresos y bienestar territorial. Se trata de compromisos y objetivos del acuerdo; no debe confundirse su formulación con resultados plenamente alcanzados. Piccone (2019) muestra la brecha entre lo pactado y lo ejecutado: los PDET cubren 170 municipios en 16 programas regionales, pero de unos 54.000 casos de restitución de tierras finalizados, menos de 10.000 terminaron en restitución efectiva, y la ONU verificó el asesinato de 99 excombatientes de las FARC desde la firma (cifras hasta 2019).",
-    "teaching": "Conecten esta ronda con el argumento de Sen: vivir sin servicios, seguridad, medios de vida y posibilidades de participación limita libertades reales. La lectura de Becerril Velasco permite preguntar si el Estado cuenta con capacidad institucional para ejecutar políticas; el documento sobre Colombia muestra por qué la presencia territorial importa.",
-    "connection": "La política contra la pobreza no es solo una transferencia: incluye instituciones, derechos, bienes públicos, reparación y capacidad de las comunidades para decidir sobre su futuro.",
+    "teaching": "vivir sin servicios, seguridad, medios de vida y posibilidades de participación limita libertades reales. La lectura de Becerril Velasco cuestiona si el Estado cuenta con capacidad institucional para ejecutar políticas; el documento sobre Colombia muestra por qué la presencia territorial importa.",onnection": "La política contra la pobreza no es solo una transferencia: incluye instituciones, derechos, bienes públicos, reparación y capacidad de las comunidades para decidir sobre su futuro.",
     "takeaway": "Reducir la pobreza en territorios excluidos exige transformar las condiciones que impiden a las personas desarrollar sus capacidades.",
     "discussion": "¿Cómo se puede evitar que una política diseñada desde el centro ignore las prioridades de las comunidades?"
   }
