@@ -47,20 +47,7 @@ function renderStage(state) {
 
     $('stage').innerHTML = `<div class="stage-kicker">${kicker}</div><div class="scenario-label">El caso</div><p class="scenario-text">${round.scenario}</p><h2 class="question-heading">${round.question}</h2><div class="option-grid">${options}</div>${rule}${progressMarkup(state.currentIndex, state.totalRounds)}`;
   } else if (state.phase === 'explanation') {
-    $('stage').innerHTML = `
-      <div class="explanation-stage">
-        <div class="stage-kicker">RONDA ${round.id}</div>
-        <h1 class="question-heading">${round.insightTitle}</h1>
-        <div class="explanation-block"><p>${round.explanation}</p></div>
-        ${getChartMarkup(round.id)}
-        <div class="teaching-box"><p>${round.teaching}</p></div>
-        <div class="teaching-box"><p>${round.connection}</p></div>
-        <p class="takeaway">${round.takeaway}</p>
-        <div class="discussion-prompt">${round.discussion}</div>
-      </div>
-      ${progressMarkup(state.currentIndex, state.totalRounds)}
-    `;
-    mountCharts(round.id);
+    $('stage').innerHTML = `<div class="explanation-stage"><div class="stage-kicker">RONDA ${round.id}</div><h1 class="question-heading">${round.insightTitle}</h1><div class="explanation-block"><p>${round.explanation}</p></div><div class="teaching-box"><p>${round.teaching}</p></div><div class="teaching-box"><p>${round.connection}</p></div><p class="takeaway">${round.takeaway}</p><div class="discussion-prompt">${round.discussion}</div></div>${progressMarkup(state.currentIndex, state.totalRounds)}`;
   }
 }
 
