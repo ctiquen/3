@@ -22,9 +22,22 @@ function renderStage(state) {
     $('stage').innerHTML = `<div class="stage-kicker">${PORTADA.universidad.toUpperCase()}</div><div class="concept-label" style="margin-top:0">${PORTADA.curso}</div><h1>¿Pobreza o falta de libertad?</h1><h2>El desafío de construir una sociedad con capacidades</h2><p>Ocho situaciones. Tres decisiones posibles. Una pregunta de fondo: ¿qué significa realmente superar la pobreza?</p><div class="concept-label">Basada en</div><p class="tiny">${PORTADA.autores.join(' · ')}</p><div class="concept-label">Presentan</div><p><b>${PORTADA.integrantes.join(' · ')}</b></p>`;
     return;
   }
-  if (state.phase === 'intro') {
-    $('stage').innerHTML = `<div class="stage-kicker">DINÁMICA DE CLASE</div><h1>¿Pobreza o falta de libertad?</h1><h2>El desafío de construir una sociedad con capacidades</h2><p>Ocho situaciones. Tres decisiones posibles. Una pregunta de fondo: ¿qué significa realmente superar la pobreza?</p><div class="stage-rule">Cuando el equipo esté listo, pulsa <b>Iniciar presentación</b>. Después abre cada votación.</div><div class="concept-label">Ruta de la clase</div><p class="tiny">Ingresos y capacidades → factores de conversión → salud y educación → desempleo → mortalidad → género y justicia → programas focalizados o universales → territorio y paz.</p>`;
-    $('speaker-label').textContent = 'Equipo expositor'; $('slide-counter').textContent = 'Inicio';
+  if (state.phase === 'intro' && document.body.classList.contains('screen-body')) {
+    $('stage').innerHTML = `
+      <div class="stage-kicker">${PORTADA.universidad.toUpperCase()}</div>
+      <div class="concept-label" style="margin-top:0">${PORTADA.curso}</div>
+      <h1>¿Pobreza o falta de libertad?</h1>
+      <h2>El desafío de construir una sociedad con capacidades</h2>
+      <div class="portada-lead">
+        <p>Ocho situaciones. Tres decisiones posibles. Una pregunta de fondo: ¿qué significa realmente superar la pobreza?</p>
+      </div>
+      <div class="concept-label">Basada en</div>
+      <div class="portada-box">
+        <p class="tiny">${PORTADA.autores.join(' · ')}</p>
+      </div>
+      <div class="concept-label">Presentan</div>
+      <p><b>${PORTADA.integrantes.map(n => n.trim()).join(' · ')}</b></p>
+    `;
     return;
   }
   if (state.phase === 'finished') {
