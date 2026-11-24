@@ -76,3 +76,175 @@ setInterval(() => {
     el.textContent = '\u23f1 ' + Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
   });
 }, 250);
+
+// ===== GRÁFICOS POR RONDA =====
+let activeCharts = [];
+
+function getChartMarkup(roundId) {
+  switch (Number(roundId)) {
+    case 4: // Desempleo -> Informalidad laboral
+      return `
+        <div style="width: 100%; max-width: 380px; margin: 18px auto;">
+          <canvas id="chart-informalidad"></canvas>
+        </div>`;
+    case 7: // Programas -> Pobreza extrema México vs. Brasil
+      return `
+        <div style="width: 100%; max-width: 660px; margin: 18px auto;">
+          <canvas id="chart-pobreza"></canvas>
+        </div>`;
+    case 8: // Territorio y paz -> KPIs + Plebiscito + Grupos armados
+      return `
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 16px 0;">
+          <div style="flex: 1; min-width: 150px; padding: 14px; border-radius: 10px; background: rgba(239, 68, 68, 0.12); text-align: center;">
+            <div style="font-size: 1.7rem; font-weight: 800; color: #ef4444;">~8 M</div>
+            <div style="font-size: 0.85rem;">Víctimas totales del conflicto</div>
+          </div>
+          <div style="flex: 1; min-width: 150px; padding: 14px; border-radius: 10px; background: rgba(245, 158, 11, 0.12); text-align: center;">
+            <div style="font-size: 1.7rem; font-weight: 800; color: #f59e0b;">~7.5 M</div>
+            <div style="font-size: 0.85rem;">Personas desplazadas</div>
+          </div>
+          <div style="flex: 1; min-width: 150px; padding: 14px; border-radius: 10px; background: rgba(100, 116, 139, 0.15); text-align: center;">
+            <div style="font-size: 1.7rem; font-weight: 800; color: #475569;">+260,000</div>
+            <div style="font-size: 0.85rem;">Personas asesinadas</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center; justify-content: center; margin: 18px 0;">
+          <div style="flex: 1; min-width: 260px; max-width: 320px;">
+            <canvas id="chart-plebiscito"></canvas>
+          </div>
+          <div style="flex: 2; min-width: 320px; max-width: 560px;">
+            <canvas id="chart-grupos"></canvas>
+          </div>
+        </div>`;
+    default:
+      return '';
+  }
+}
+
+function mountCharts(roundId) {
+  // Limpia gráficos anteriores para evitar errores al cambiar de ronda
+  activeCharts.forEach(c => c.destroy());
+  activeCharts = [];
+
+  if (typeof Chart === 'undefined') return;
+
+  switch (Number(roundId)) {
+    case 4: {
+      const el = document.getElementById('chart-informalidad');
+      if (!el) return;
+      activeCharts.push(new Chart(el, {
+        type: 'doughnut',
+        data: {
+          labels: ['Autoempleo / Microempresas (<5 emp.)', 'Resto del mercado laboral'],
+          datasets: [{ data: [50, 50], backgroundColor: ['#f59e0b', '#cbd5e1'], borderWidth: 2 }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            title: { display: true, text: 'Informalidad laboral en América Latina (+50%)' },
+            legend: { position: 'bottom' }
+          }
+        }
+      }));
+      break;
+    }
+
+    case 7: {
+      const el = document.getElementById('chart-pobreza');
+      if (!el) return;
+      activeCharts.push(new Chart(el, {
+        type: 'line',
+        data: {
+          labels: ['1981', '1990', '2000', '2008', '2011'],
+          datasets: [
+            {
+              label: 'Brasil (%)',
+              data: [24.8, 23.4, 13.05, 7.3, 6.1],
+              borderColor: '#10b981',
+              backgroundColor: 'rgba(16, 185, 129, 0.15)',
+              tension: 0.3,
+              fill: true
+            },
+            {
+              label: 'México (%)',
+              data: [13.48, 18.32, 15.2, 11.2, null],
+              borderColor: '#ef4444',
+              backgroundColor: 'rgba(239, 68, 68, 0.15)',
+              tension: 0.3,
+              fill: true
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            title: { display: true, text: 'Pobreza extrema: México vs. Brasil (1981–2011)' }
+          },
+          scales: {
+            y: { beginAtZero: true, title: { display: true, text: '% de población' } }
+          }
+        }
+      }));
+      break;
+    }
+
+    case 8: {
+      const elPleb = document.getElementById('chart-plebiscito');
+      if (elPleb) {
+        activeCharts.push(new Chart(elPleb, {
+          type: 'doughnut',
+          data: {
+            labels: ['Votaron (37.4%)', 'Abstención (62.6%)'],
+            datasets: [{ data: [37.4, 62.6], backgroundColor: ['#3b82f6', '#e2e8f0'], borderWidth: 2 }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              title: { display: true, text: 'Plebiscito por la Paz (2016)' },
+              legend: { position: 'bottom' }
+            }
+          }
+        }));
+      }
+
+      const elGrupos = document.getElementById('chart-grupos');
+      if (elGrupos) {
+        activeCharts.push(new Chart(elGrupos, {
+          type: 'bar',
+          data: {
+            labels: [
+              'ELN (1,500–2,500)',
+              'Clan del Golfo (AGC)',
+              'Frente Oliver Sinisterra',
+              'Frente 1° Armando Ríos',
+              'EPL (Los Pelusos)',
+              'Rastrojos (100–310)',
+              'Caparrapos'
+            ],
+            datasets: [{
+              label: 'Miembros estimados',
+              data: [2000, 1600, 400, 400, 260, 205, 150],
+              backgroundColor: '#ef4444',
+              borderRadius: 4
+            }]
+          },
+          options: {
+            indexAxis: 'y',
+            responsive: true,
+            plugins: {
+              title: { display: true, text: 'Grupos armados activos en Colombia (estimado)' },
+              legend: { display: false }
+            },
+            scales: {
+              x: { beginAtZero: true, title: { display: true, text: 'Miembros' } }
+            }
+          }
+        }));
+      }
+      break;
+    }
+  }
+}
+
+
+
