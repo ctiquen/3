@@ -68,15 +68,32 @@
   font-size: calc(14px + 2pt) !important;
 }
 
-/* ---- Gráficos (Chart.js) ---- */
-.chart-box { position: relative; height: clamp(170px, 26vh, 300px); margin: 6px 0 18px; }
-.chart-box-sm { height: clamp(150px, 22vh, 240px); margin: 6px 0 8px; }
-.chart-card { background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; margin: 18px 0; }
-.chart-source { font-size: 12px !important; line-height: 1.5 !important; color: var(--muted) !important; margin: 6px 0 0; }
-.chart-sub { font-size: 15px !important; line-height: 1.5 !important; color: var(--muted) !important; margin: 0 0 6px; }
-.results-stage h2 { margin: 0 0 6px; }
-.results-stage .result-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 0; }
-.swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; border: 1px solid var(--muted); margin-right: 8px; vertical-align: -1px; }
-.explanation-split { display: grid; grid-template-columns: 1fr; gap: 0 24px; align-items: start; }
-@media (min-width: 1100px) { .explanation-split { grid-template-columns: 1.25fr 1fr; } }
-.screen-stage .results-stage .chart-box { height: clamp(220px, 34vh, 400px); }
+/* ---- Jerarquía de cuadros en la portada (.screen-body) ---- */
+.screen-body .portada-lead {
+  background: var(--pale);
+  border-left: 4px solid var(--coral);
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin: 18px 0 20px;
+  max-width: 850px;
+}
+
+.screen-body .portada-lead p {
+  margin: 0;
+  color: var(--ink);
+}
+
+.screen-body .portada-box {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 14px 18px;
+  margin-top: 8px;
+  max-width: 850px;
+}
+
+.screen-body .portada-box p {
+  margin: 0;
+  color: var(--muted);
+}
+
